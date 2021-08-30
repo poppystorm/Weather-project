@@ -20,9 +20,21 @@ function citySearch(event) {
   let Url = `https://api.openweathermap.org/data/2.5/weather?q=${lowCity}&units=metric&appid=${key}`;
   axios.get(Url).then(showTemperature);
 }
+function showPosition(position) {
+  let long = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let key = "62f43ed8fcca18b9680c53a70280908f";
+  let Url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+  console.log(Url);
+  axios.get(Url).then(showTemperature);
+}
+navigator.geolocation.getCurrentPosition(showPosition);
 
 let selectCity = document.querySelector("form");
 selectCity.addEventListener("submit", citySearch);
+
+let currentWeather = document.querySelector("#currentButton");
+currentWeather.addEventListener("submit", showPosition);
 
 function formatDate(Date) {
   let hours = Date.getHours();
@@ -42,7 +54,7 @@ function formatDate(Date) {
     "Sep",
     "Oct",
     "Nov",
-    "Dec"
+    "Dec",
   ];
   let month = months[Date.getMonth()];
   let showTime = `${day}, ${month}, ${hours}:${minuits}, ${year}`;
