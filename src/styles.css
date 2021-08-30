@@ -3,7 +3,7 @@ body {
   text-align: left;
   font-family: monospace;
 }
-.container-sm {
+#frame {
   max-width: 720px;
   width: 100%;
   padding-right: 15px;
@@ -24,7 +24,8 @@ h1 {
   margin-top: 50px;
   text-align: center;
 }
-a {
+
+.measure {
   text-decoration: none;
   color: black;
 }

@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <div class="container-sm px-4">
+    <div class="container-sm px-4" id="frame">
       <form class="row row-cols-lg-auto g-3 align-items-center mt-3">
         <div class="col-8">
           <label class="visually-hidden" for="inlineFormInputGroupUsername"
@@ -37,7 +37,13 @@
       <div class="row justify-content-start">
         <div class="col-8 city"><h1>City</h1></div>
         <div class="col-4 degrees">
-          <h2><span id="temp">22</span><a href="#">°C</a>|<a href="#">F</a></h2>
+          <h2>
+            <span id="temp">22</span> <a href="#" class="measure">°C</a>|<a
+              href="#"
+              class="measure"
+              >F</a
+            >
+          </h2>
         </div>
         <div class="col-8"><span id="date">Tuesday, 22 of August</span></div>
         <div class="col-4">
