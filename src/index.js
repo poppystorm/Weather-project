@@ -8,6 +8,9 @@ function showTemperature(response) {
   let windspeed = response.data.wind.speed;
   let wind = document.querySelector("#wind");
   wind.innerHTML = windspeed;
+  let city = document.querySelector("h1");
+  let citydata = response.data.name;
+  city.innerHTML = citydata;
 }
 
 function citySearch(event) {
@@ -24,7 +27,7 @@ function showPosition(position) {
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
   let key = "62f43ed8fcca18b9680c53a70280908f";
-  let Url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+  let Url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&&units=metric&appid=${key}`;
   console.log(Url);
   axios.get(Url).then(showTemperature);
 }
