@@ -3,6 +3,14 @@ body {
   text-align: left;
   font-family: monospace;
 }
+.container-sm {
+  max-width: 720px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 form {
   text-align: center;
   margin: 20px 20px;
@@ -11,6 +19,7 @@ form {
 h1 {
   color: #0c5dd4;
 }
+
 .forecast {
   margin-top: 50px;
   text-align: center;
