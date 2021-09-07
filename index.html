@@ -57,7 +57,7 @@
             </div>
             <div class="row justify-content-end">
               <div class="col-8">
-                <img id="weatherIcon" src="" alt="sunny" />
+                <img class="main" id="weatherIcon" src="" alt="sunny" />
               </div>
               <div class="col-3 addInfo">
                 <span id="date">Tuesday, 22 of August</span><br />
@@ -71,10 +71,17 @@
           </div>
           <br />
           <div class="row forecast">
-            <div class="col-3">Monday</div>
-            <div class="col-3">Tuesday</div>
-            <div class="col-3">Wednesday</div>
-            <div class="col-3">Thursday</div>
+            <div class="col-2 date-forecast" id="dateForecast">
+              Monday
+              <img
+                class="prediction"
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt=""
+                width="60px"
+              />
+              <span class="forecast-temp">18</span>
+              <span class="forecast-temp">12</span>
+            </div>
           </div>
         </div>
         <a href="https://github.com/poppystorm/Weather-project"

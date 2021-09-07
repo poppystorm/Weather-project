@@ -1,3 +1,23 @@
+function displayforcast() {
+  let forecastElement = document.querySelector("#dateForecast");
+
+  let forecastHTML = `<div class="row forecast">`;
+  forecastHTML =
+    forecastHTML +
+    `<div class="col-2 date-forecast" id="dateForecast">
+              Monday
+              <img
+                class="prediction"
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt=""
+                width="60px"
+              />
+              <span class="forecast-temp">18</span>
+              <span class="forecast-temp">12</span>
+            </div>
+          ;`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function showTemperature(response) {
   celsius = Math.round(response.data.main.temp);
   let temperature = Math.round(response.data.main.temp);
@@ -35,15 +55,19 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function citySearch(event) {
-  event.preventDefault();
-  let city = document.querySelector("#inlineFormInputGroupUsername");
-  let h1 = document.querySelector("h1");
-  let lowCity = city.value;
-  h1.innerHTML = lowCity;
+function citySearch(city) {
   let key = "62f43ed8fcca18b9680c53a70280908f";
-  let Url = `https://api.openweathermap.org/data/2.5/weather?q=${lowCity}&units=metric&appid=${key}`;
+  let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
+  console.log(Url);
   axios.get(Url).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector(
+    `#inlineFormInputGroupUsername`
+  );
+  citySearch(cityInputElement.value);
 }
 
 function fahrenheitconversion() {
@@ -57,6 +81,7 @@ function celsiusconversion() {
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = Math.round(celsius);
 }
+
 let celsius = null;
 
 let farhenheitlink = document.querySelector("#F");
@@ -66,12 +91,13 @@ let clesiuslink = document.querySelector("#C");
 clesiuslink.addEventListener("click", celsiusconversion);
 
 let selectCity = document.querySelector("form");
-selectCity.addEventListener("submit", citySearch);
-
-citySearch("New york");
+selectCity.addEventListener("submit", handleSubmit);
 
 let currentWeather = document.querySelector("#currentButton");
 currentWeather.addEventListener("click", getCurrentPosition);
+
+displayforcast();
+citySearch("New york");
 
 function formatDate(Date) {
   let hours = Date.getHours();
