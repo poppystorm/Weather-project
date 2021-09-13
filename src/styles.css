@@ -19,7 +19,6 @@ img.main {
 img.prediction {
   margin-right: 10px;
   display: block;
-  text-align: center;
 }
 
 .wrapper {
@@ -51,8 +50,8 @@ img.prediction {
   font-size: 13px;
 }
 #currentButton {
-  background-color: rgb(248, 89, 89);
-  border-color: rgb(248, 89, 89);
+  background-color: #ec6e4c;
+  border-color: #ec6e4c;
   margin-left: 18px;
 }
 .measure {
@@ -62,4 +61,7 @@ img.prediction {
 
 .addInfo {
   margin-right: 50px;
+}
+.weather-forecast-temperature-max {
+  font-weight: bold;
 }
