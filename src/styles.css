@@ -49,11 +49,7 @@ img.prediction {
 .forecast-temp {
   font-size: 13px;
 }
-#currentButton {
-  background-color: #ec6e4c;
-  border-color: #ec6e4c;
-  margin-left: 18px;
-}
+
 .measure {
   text-decoration: none;
   color: black;
@@ -62,6 +58,16 @@ img.prediction {
 .addInfo {
   margin-right: 50px;
 }
+
 .weather-forecast-temperature-max {
   font-weight: bold;
+}
+
+#currentButton {
+  background-color: #ec6e4c;
+  border-color: #ec6e4c;
+  margin-left: 18px;
+}
+#forcastPicture {
+  margin-left: 18px;
 }
