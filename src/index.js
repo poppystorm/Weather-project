@@ -25,7 +25,7 @@ function displayforecast(response) {
       <div class="col-3">
         <div class="weather-forecast-date">${formatDay(forcastDay.dt)}</div>
         <img
-          src="http://openweathermap.org/img/wn/${
+          src="https://openweathermap.org/img/wn/${
             forcastDay.weather[0].icon
           }@2x.png"
           alt=""
