@@ -72,11 +72,11 @@ function showTemperature(response) {
   let weathericon = document.querySelector("#weatherIcon");
   weathericon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weathericon.setAttribute(
     "alt",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
   getForcast(response.data.coord);
